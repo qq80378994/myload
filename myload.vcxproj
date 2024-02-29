@@ -134,11 +134,11 @@
     <ClCompile Include="myload.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Desktop\wowInjector-master\wowInjector\peb.h" />
-    <ClInclude Include="..\..\..\Desktop\wowInjector-master\wowInjector\shellcodify.h" />
     <ClInclude Include="http_download.h" />
+    <ClInclude Include="peb.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
+    <ClInclude Include="shellcodify.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="myload1.rc" />

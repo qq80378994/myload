@@ -20,12 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Desktop\wowInjector-master\wowInjector\peb.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Desktop\wowInjector-master\wowInjector\shellcodify.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -33,6 +27,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="http_download.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="peb.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="shellcodify.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

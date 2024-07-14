@@ -9,7 +9,7 @@ using namespace std;
 #include "peb.h"
 #include "shellcodify.h"
 #include "http_download.h"
-
+//resolve by qq5489423123
 bool readBinFile(const wchar_t fileName[], char** bufPtr, DWORD& length) {
     if (FILE* fp = _wfopen(fileName, L"rb")) {
         fseek(fp, 0, SEEK_END);

@@ -9,7 +9,7 @@ using namespace std;
 #include "peb.h"
 #include "shellcodify.h"
 #include "http_download.h"
-
+//resolve by qq5489423123
 bool readBinFile(const wchar_t fileName[], char** bufPtr, DWORD& length) {
     if (FILE* fp = _wfopen(fileName, L"rb")) {
         fseek(fp, 0, SEEK_END);
@@ -21,7 +21,24 @@ bool readBinFile(const wchar_t fileName[], char** bufPtr, DWORD& length) {
     }
     return false;
 }
-
+uint32_t getShadowContext52(HANDLE hProcess, uint32_t PEB) {
+    uint32_t teb32 = PEB + 0x3052, teb64 = teb32 - 0x2000, ptrCtx = 0;
+    //64的teb结构地址+1488=32位的teb结构地址   从这个进程的这个地址读取数据
+    ReadProcessMemory(hProcess, (LPCVOID)(teb64 + 0x1488), &ptrCtx, sizeof(ptrCtx), 0);
+    return ptrCtx + 6;
+}
+uint32_t getShadowContext32(HANDLE hProcess, uint32_t PEB) {
+    uint32_t teb32 = PEB + 0x3053, teb64 = teb32 - 0x2000, ptrCtx = 0;
+    //64的teb结构地址+1488=32位的teb结构地址   从这个进程的这个地址读取数据
+    ReadProcessMemory(hProcess, (LPCVOID)(teb64 + 0x1488), &ptrCtx, sizeof(ptrCtx), 0);
+    return ptrCtx + 5;
+}
+uint32_t getShadowContext32(HANDLE hProcess, uint32_t PEB) {
+    uint32_t teb32 = PEB + 0x3053, teb64 = teb32 - 0x2000, ptrCtx = 0;
+    //64的teb结构地址+1488=32位的teb结构地址   从这个进程的这个地址读取数据
+    ReadProcessMemory(hProcess, (LPCVOID)(teb64 + 0x1488), &ptrCtx, sizeof(ptrCtx), 0);
+    return ptrCtx + 4;
+}
 uint32_t getShadowContext32(HANDLE hProcess, uint32_t PEB) {
     uint32_t teb32 = PEB + 0x3000, teb64 = teb32 - 0x2000, ptrCtx = 0;
     //64的teb结构地址+1488=32位的teb结构地址   从这个进程的这个地址读取数据
